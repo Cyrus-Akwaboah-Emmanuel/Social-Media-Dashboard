@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    /* ### Primary */
+    --Lime-Green: hsl(163, 72%, 41%);
+    --Bright-Red: hsl(356, 69%, 56%);
+
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    /* --Instagram-linear-gradient: (hsl(37, 97%, 70%), hsl(329, 70%, 58%); */
+    --YouTube: hsl(348, 97%, 39%);
+
+    /* fonts */
+    --font-family: 'Public Sans', sans-serif;
+}
+
+body{
+    min-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    font-family: var(--font-family);
+    color: #000;
+    position: relative;
+    animation: animate 10s infinite;
+    transition: .3s ease;
+    background: #F8EDE3;
+}
+
+@keyframes animate {
+    0%{ background: #F8EDE3;}
+    33%{ background: #DFD3C3;}
+    67%{ background: #D0B8A8;}
+}
+
+.darkMode{
+    color: white;
+    background: #334756;
+    animation: dark-mode 6s infinite alternate;
+}
+@keyframes dark-mode {
+    0%{background: #334756 }
+    33%{background: #2C394B}
+    67%{ background: #082032;}
+}
+
+main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-sub{
+    padding-bottom: 1rem;
+    border-bottom: 2px solid black;
+}
+
+.darkmode{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+.darkmode p{padding-right: .6rem;}
+
+#darkmode-svg{
+    width: 20px;
+    height: 20px;
+}
+
+.card,.overview-card{
+    padding: 1rem;
+    backdrop-filter: blur(10rem);
+    -webkit-box-shadow: 2px 0px 14px 4px rgba(0,0,0,0.3); 
+    box-shadow: 2px 0px 14px 4px rgba(0,0,0,0.3);
+}
+
+.card{
+    text-align: center;
+    position: relative;
+    margin: 0px 0px 2rem;
+}
+
+.colorbar{
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--Facebook);
+}
+#twitter .colorbar{background-color: var(--Twitter);}
+#instagram .colorbar{background-image: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));}
+#youtube .colorbar{background-color: var(--YouTube);}
+
+.year-follower{padding:2rem 0px;}
+.year-follower h1{font-size: 3.5rem;}
+.year-follower p{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.acountname,.insight,.sectwo p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.overview-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 2rem;
+}
+
+.secone, .sectwo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sectwo{align-items: center;}
+
+.secone h2,
+.sectwo p{padding-top: 1rem;}
+
+
+.sectwo img:not(:last-child){
+    width: 10px;
+    height: 10px;
+}
+
+.attribution { font-size: 11px; text-align: center;}
+.attribution a { color: hsl(228, 45%, 44%);}
+
+@media (min-width: 800px){
+    body{
+        place-content: unset;
+    }
+    main{
+        padding: 5rem;
+    }
+    header{
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .title-sub{
+        padding-bottom: 1rem;
+        border-bottom: unset;
+    }
+    .darkmode{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: unset;
+    }
+
+    #sectionOne{
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(4,1fr);
+    }
+    #today-title{padding: 3rem 0px;}
+    .card{margin: unset;}
+    .card img{padding-right: .5rem;}
+
+    .overview-cards{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .overview-card{padding: 2rem}
+}
